@@ -34,7 +34,9 @@ Video* Vlist::lookup (string title)
 {
         //checks if list is empty first. If it's not it proceeds
         if (!m_head)
+        {
                 return NULL;
+        }
 
         for ( Node *tmp = m_head; tmp != NULL; tmp = tmp->m_next )
         {
@@ -45,7 +47,7 @@ Video* Vlist::lookup (string title)
         }
         return NULL;
 }
-//legnth function: goes through list until the end is reached and then returns length
+//length function: goes through list until the end is reached and then returns length
 int Vlist::length()
 {
         int length = 0;
