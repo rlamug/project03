@@ -36,7 +36,7 @@ int main()
                         cin.ignore();
                         Video *new_video = new Video(title, url, comment, length, rating);
                         // error command if it is already in list. each respective command has an error if not valid
-                        if (!list.insert(new_video))
+                        if (list.insert(new_video) == 0)
                         {
                                 cerr << "Could not insert video <" <<title<< ">, already in list."<<endl;
                         }
@@ -45,7 +45,7 @@ int main()
                 else if ( option == "remove" )
                 {
                         getline(cin, title);
-                        if ( !list.remove(title) )
+                        if (list.remove(title) == 0)
                         {
                                 cerr<<"Title <" <<title<< "> not in list, could not delete." << endl;
                         }
